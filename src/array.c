@@ -11,18 +11,18 @@ int main(){
   for(i = 0; i < n; i++){
     scanf("%d", &A[i]);
   }
-  while(ub - lb > 1){
-    int m = (lb + ub) / 2
-    if(p(m)){
-      ub = m;
-    }
-    else {
+  lb = 0;
+  ub = n;
+  while (ub - lb > 1) {
+    long long int m = (lb + ub) / 2;
+    if(A[m] < k){
       lb = m;
     }
+    else {
+      ub = m;
+    }
   }
-  printf("%d/n", ub)
-
-
+  printf("%d\n", ub);
 
   return 0;
 }

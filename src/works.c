@@ -11,6 +11,10 @@ int main(){
   for(i = 0; i < n; i++){
     scanf("%d", &A[i]);
   }
+  lb = -1;
+  ub = n;
+  int m = (ub + lb)/2;
+  
 
 
   return 0;
