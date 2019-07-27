@@ -4,7 +4,22 @@ int n;
 int k;
 int A[100000];
 
-
+int q(int m){
+  int i;
+  int workers = 0;
+  int sum = 0;
+  for(i = 0; i < n; i++){
+      if(A[i] > m) return 0;
+      if (sum + A[i] <= m){
+        sum += A[i];
+      }
+      else{
+        sum = A[i];
+        workers += 1;
+      }
+    }
+  return workers;
+}
 
 
 int main(){
@@ -18,18 +33,8 @@ int main(){
   ub = 1000000000;
   while (ub - lb > 1) {
     long long int m = (lb + ub) / 2;
-    int workers = 0;
-    int sum = 0;
-    for(i = 0; i < n; i++){
-      if (sum + A[i] < m){
-        sum += A[i];
-      }
-      else{
-        workers += 1;
-        sum = 0;
-      }
-    }
-    if(workers < k){
+    
+    if(q(m) < k){
       ub = m;
     }
     else {
