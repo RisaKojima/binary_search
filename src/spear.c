@@ -12,7 +12,7 @@ int main(){
     scanf("%d", &A[i]);
   }
   lb = 0;
-  ub = 1000000000;
+  ub = 1000000001;
   while (ub - lb > 1) {
     long long int m = (lb + ub) / 2;
     long long int Sum = 0;

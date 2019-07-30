@@ -6,7 +6,7 @@ int A[100000];
 
 int q(int m){
   int i;
-  int workers = 0;
+  int workers = 1;
   int sum = 0;
   for(i = 0; i < n; i++){
       if(A[i] > m) return 0;
@@ -18,7 +18,7 @@ int q(int m){
         workers += 1;
       }
     }
-  return workers;
+  return workers <= k;
 }
 
 
@@ -34,7 +34,7 @@ int main(){
   while (ub - lb > 1) {
     long long int m = (lb + ub) / 2;
     
-    if(q(m) < k){
+    if(q(m)){
       ub = m;
     }
     else {
