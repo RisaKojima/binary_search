@@ -41,7 +41,7 @@ int main(){
       lb = m;
     }
   }
-  printf("%d\n", lb);
+  printf("%d\n", ub);
 
 
 
